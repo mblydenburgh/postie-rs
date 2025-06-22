@@ -1,7 +1,4 @@
-# Tauri + Dioxus
+# Postie
 
-This template should help get you started developing with Tauri and Dioxus.
-
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) + [Dioxus](https://marketplace.visualstudio.com/items?itemName=DioxusLabs.dioxus).
+Postie is a GUI curl client inspired by Postman, written in Rust. Replacement for [https://github.com/blydenburgh/postie](https://github.com/blydenburgh/postie),
+originally using [egui](https://egui.rs).
