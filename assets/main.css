@@ -1,5 +1,6 @@
 html, body, main {
   overflow: hidden;
+  background-color: grey;
 }
 
 #app {
@@ -7,6 +8,7 @@ html, body, main {
   display: flex;
   flex-direction: column;
   margin: 10px;
+  background-color: grey;
 }
 
 #main_view {
