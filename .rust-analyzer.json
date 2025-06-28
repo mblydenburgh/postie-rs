@@ -1,0 +1,8 @@
+{
+  "cargo": {
+    "features": ["server"]
+  },
+  "procMacro": {
+    "enable": true
+  }
+}

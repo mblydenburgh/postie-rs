@@ -1,14 +1,24 @@
 use dioxus::prelude::*;
+use log::info;
 
-use crate::api::get_tab;
+use crate::api::load_active_tab;
 use crate::models::method::HttpMethod;
 
 #[component]
 pub fn RequestBar() -> Element {
+    // let mut active_tab = use_resource(load_active_tab);
+    // let active_tab_signal = active_tab.suspend()?;
     let mut url_input_value = use_signal(|| String::new());
     let mut http_method = use_signal(|| HttpMethod::GET);
+    // use_effect(move || {
+    //     let tab = active_tab_signal.unwrap();
+    //     info!("{:?}", &tab);
+    //     url_input_value.set(active_tab_signal().unwrap().url);
+    //     http_method.set(active_tab_signal().unwrap().method);
+    // });
     use_future(move || async move {
-        if let Ok(tab) = get_tab().await {
+        if let Ok(tab) = load_active_tab().await {
+            info!("tab: {:?}", tab);
             url_input_value.set(tab.url);
             http_method.set(tab.method);
         }
@@ -36,6 +46,7 @@ pub fn RequestBar() -> Element {
                 type: "text",
                 value: "{url_input_value}"
             }
+            p { "tab: {url_input_value}" }
         }
     }
 }
